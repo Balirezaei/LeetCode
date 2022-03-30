@@ -8,15 +8,29 @@ namespace Solutions.Test.Hard
 {
     public class ReversePairsSolutionUnitTest
     {
+
+        [Fact]
+        public void Algorithm_Shoud_Detect_Reverse_Pair_with_very_simple_input_Correctly()
+        {
+            var numsInput = new int[] { 3, 1, 2 };
+            var expected = 1;
+
+            var solution = new ReversePairsSolution();
+
+            var actual = solution.ReversePairsMergeSort(numsInput);
+
+            actual.Should().Be(expected);
+        }
+
         [Fact]
         public void Algorithm_Shoud_Detect_Reverse_Pair_with_simple_input_Correctly()
         {
-            var numsInput = new int[] { 1, 3, 2, 3, 1 };
+            var numsInput = new int[] { 1, 3, 3, 1 };
             var expected = 2;
 
             var solution = new ReversePairsSolution();
 
-            var actual = solution.ReversePairs(numsInput);
+            var actual = solution.ReversePairsMergeSort(numsInput);
 
             actual.Should().Be(expected);
         }
@@ -29,7 +43,7 @@ namespace Solutions.Test.Hard
 
             var solution = new ReversePairsSolution();
 
-            var actual = solution.ReversePairs(numsInput);
+            var actual = solution.ReversePairsMergeSort(numsInput);
 
             actual.Should().Be(expected);
         }
@@ -42,19 +56,18 @@ namespace Solutions.Test.Hard
 
             var solution = new ReversePairsSolution();
 
-            var actual = solution.ReversePairs(numsInput);
+            var actual = solution.ReversePairsMergeSort(numsInput);
             actual.Should().Be(expected);
         }
 
         [Fact]
         public void Algorithm_Shoud_Detect_Reverse_Pair_in_effitient_time_with_large_array_Correctly()
         {
-
             int Min = 0;
             int Max = 60000;
             Random randNum = new Random();
             int[] numsInput = Enumerable
-                .Repeat(0, 500000)
+                .Repeat(0, 50000)
                 .Select(i => randNum.Next(Min, Max))
                 .ToArray();
 
@@ -63,10 +76,10 @@ namespace Solutions.Test.Hard
             {
                 var solution = new ReversePairsSolution();
 
-                var actual = solution.ReversePairs(numsInput);
+                var actual = solution.ReversePairsMergeSort(numsInput);
 
             };
-           //
+            action.Should().NotThrow<Exception>();
 
 
         }
