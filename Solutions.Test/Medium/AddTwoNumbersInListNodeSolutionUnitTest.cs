@@ -29,7 +29,7 @@ namespace Solutions.Test.Medium
             AddTwoNumbersInListNodeSolution solution = new AddTwoNumbersInListNodeSolution();
             var l1 = solution.InputToListNode("56");
             var l2 = solution.InputToListNode("549");
-            var expected = new ListNode(0, solution.InputToListNode("1010"));
+            var expected = solution.InputToListNode("0101");
 
             var actual = solution.AddTwoNumbers(l1, l2);
             actual.Should().BeEquivalentTo(expected);
