@@ -21,10 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Medium\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Solutions\Solutions.csproj" />
   </ItemGroup>
 
